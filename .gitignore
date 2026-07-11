@@ -1,0 +1,7 @@
+data/raw/
+data/processed/
+*.tar.gz
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+wandb/

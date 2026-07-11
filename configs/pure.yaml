@@ -1,0 +1,67 @@
+# KuaiRand-Pure:小数据调试配置,几分钟跑通全流程
+dataset: pure
+raw_dir: data/raw/KuaiRand-Pure/data
+out_dir: data/processed/pure
+reports_dir: reports
+
+log_files:
+  - log_standard_4_08_to_4_21_pure.csv
+  - log_standard_4_22_to_5_08_pure.csv
+random_log: log_random_4_22_to_5_08_pure.csv
+user_features: user_features_pure.csv
+video_features: video_features_basic_pure.csv
+
+# 候选集裁剪:曝光次数 >= 该值的 item 进入候选集
+min_item_count: 5
+
+hash:
+  item_buckets: 2000
+  author_buckets: 5000
+
+rank:
+  model: sim
+  long_topk: 30
+  use_sem: false      # 需要先跑 encode_captions 才能开
+  sem_dim: 64
+  hist_len: 100
+  emb_dim: 64
+  mlp_dims: [256, 128, 64]
+  batch_size: 1024
+  epochs: 5
+  lr: 0.001
+  num_workers: 4
+  label: is_click
+  val_sample: 0        # 0 = 全量
+
+
+# 时间切分(含当天)
+train_end_date: 20220501
+val_end_date: 20220504
+# val_end_date 之后 → test
+
+# 标签
+labels: [is_click, long_view, is_like]
+main_label: is_click
+
+# ItemCF
+itemcf_max_seq: 2000     # 每用户参与共现统计的最近点击数上限
+itemcf_window: 10        # 共现滑窗
+itemcf_topk_sim: 100     # 每 item 保留的相似 item 数
+itemcf_user_recent: 50   # 推断时使用的用户最近点击数
+
+# 双塔召回
+two_tower:
+  hist_len: 50
+  min_hist: 3
+  emb_dim: 64
+  out_dim: 64
+  temperature: 0.05
+  batch_size: 1024
+  epochs: 10
+  lr: 0.001
+  num_workers: 2
+
+# 评估
+eval_topk: [50, 100, 500]
+
+seed: 42

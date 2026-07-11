@@ -1,0 +1,67 @@
+# KuaiRand-1K:正式实验配置(超长序列)
+dataset: 1k
+raw_dir: data/raw/KuaiRand-1K/data
+out_dir: data/processed/1k
+reports_dir: reports
+
+log_files:
+  - log_standard_4_08_to_4_21_1k.csv
+  - log_standard_4_22_to_5_08_1k.csv
+random_log: log_random_4_22_to_5_08_1k.csv
+user_features: user_features_1k.csv
+video_features: video_features_basic_1k.csv
+
+# 1K 版有 437 万 item,裁剪阈值更高;先跑 EDA 看分布再微调
+min_item_count: 30
+
+# 长尾 hash 分桶(应对 85% OOV)
+hash:
+  item_buckets: 200000
+  author_buckets: 50000
+
+# 排序模型
+rank:
+  model: sim          # din=短序列baseline, sim=+长序列GSU检索(消融用 --set rank.model=din)
+  long_topk: 50       # GSU 从全生命周期检索的同类目行为数
+  use_sem: true       # caption 语义表(消融用 --set rank.use_sem=false)
+  sem_dim: 64
+  hist_len: 200
+  emb_dim: 64
+  mlp_dims: [256, 128, 64]
+  batch_size: 1024
+  epochs: 2
+  lr: 0.001
+  num_workers: 4
+  label: is_click
+  # 多任务(run_mmoe 用)
+  tasks: [is_click, long_view, is_like]
+  n_experts: 4
+  expert_dim: 64
+  val_sample: 300000   # 每 epoch 用 val 抽样评估,加速
+
+
+train_end_date: 20220501
+val_end_date: 20220504
+
+labels: [is_click, long_view, is_like]
+main_label: is_click
+
+itemcf_max_seq: 2000
+itemcf_window: 10
+itemcf_topk_sim: 100
+itemcf_user_recent: 50
+
+two_tower:
+  hist_len: 50
+  min_hist: 3
+  emb_dim: 64
+  out_dim: 64
+  temperature: 0.05
+  batch_size: 2048
+  epochs: 20          # 上限;实际由早停决定(val Recall@100 连续2轮不涨即停)
+  lr: 0.001
+  num_workers: 4
+
+eval_topk: [50, 100, 500]
+
+seed: 42

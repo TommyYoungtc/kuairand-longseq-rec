@@ -1,0 +1,59 @@
+# 合成数据:冒烟测试配置(验证代码,不看指标绝对值)
+dataset: synth
+raw_dir: data/raw/KuaiRand-Synth/data
+out_dir: data/processed/synth
+reports_dir: reports
+
+log_files:
+  - log_standard_4_08_to_4_21_synth.csv
+  - log_standard_4_22_to_5_08_synth.csv
+random_log: log_random_4_22_to_5_08_synth.csv
+user_features: user_features_synth.csv
+video_features: video_features_basic_synth.csv
+
+min_item_count: 5
+train_end_date: 20220501
+val_end_date: 20220504
+
+hash:
+  item_buckets: 500
+  author_buckets: 300
+
+rank:
+  model: sim
+  long_topk: 10
+  use_sem: false      # 合成数据无 caption
+  sem_dim: 16
+  hist_len: 30
+  emb_dim: 32
+  mlp_dims: [64, 32]
+  batch_size: 512
+  epochs: 2
+  lr: 0.001
+  num_workers: 0
+  label: is_click
+  val_sample: 0
+
+
+labels: [is_click, long_view, is_like]
+main_label: is_click
+
+itemcf_max_seq: 2000
+itemcf_window: 10
+itemcf_topk_sim: 100
+itemcf_user_recent: 50
+
+two_tower:
+  hist_len: 20
+  min_hist: 3
+  emb_dim: 32
+  out_dim: 32
+  temperature: 0.05
+  batch_size: 512
+  epochs: 2
+  lr: 0.001
+  num_workers: 0
+
+eval_topk: [50, 100]
+
+seed: 42

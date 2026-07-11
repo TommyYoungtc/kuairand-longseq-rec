@@ -1,0 +1,387 @@
+date,exp_name,config,metric,value
+2026-07-06 19:56,two_tower/synth/val/ep0,configs/synth.yaml,Recall@50,0.056409
+2026-07-06 19:56,two_tower/synth/val/ep0,configs/synth.yaml,NDCG@50,0.020814
+2026-07-06 19:56,two_tower/synth/val/ep0,configs/synth.yaml,Recall@100,0.110157
+2026-07-06 19:56,two_tower/synth/val/ep0,configs/synth.yaml,NDCG@100,0.035173
+2026-07-06 19:56,two_tower/synth/val/ep1,configs/synth.yaml,Recall@50,0.075274
+2026-07-06 19:56,two_tower/synth/val/ep1,configs/synth.yaml,NDCG@50,0.031838
+2026-07-06 19:56,two_tower/synth/val/ep1,configs/synth.yaml,Recall@100,0.143937
+2026-07-06 19:56,two_tower/synth/val/ep1,configs/synth.yaml,NDCG@100,0.050479
+2026-07-06 19:56,two_tower/synth/test,configs/synth.yaml,Recall@50,0.060641
+2026-07-06 19:56,two_tower/synth/test,configs/synth.yaml,NDCG@50,0.031341
+2026-07-06 19:56,two_tower/synth/test,configs/synth.yaml,Recall@100,0.124275
+2026-07-06 19:56,two_tower/synth/test,configs/synth.yaml,NDCG@100,0.050717
+2026-07-07 10:10,popularity/pure/val,configs/pure.yaml,Recall@50,0.140105
+2026-07-07 10:10,popularity/pure/val,configs/pure.yaml,NDCG@50,0.053297
+2026-07-07 10:10,popularity/pure/val,configs/pure.yaml,Recall@100,0.219609
+2026-07-07 10:10,popularity/pure/val,configs/pure.yaml,NDCG@100,0.068989
+2026-07-07 10:10,popularity/pure/val,configs/pure.yaml,Recall@500,0.492330
+2026-07-07 10:10,popularity/pure/val,configs/pure.yaml,NDCG@500,0.111534
+2026-07-07 10:10,popularity/pure/test,configs/pure.yaml,Recall@50,0.123290
+2026-07-07 10:10,popularity/pure/test,configs/pure.yaml,NDCG@50,0.048179
+2026-07-07 10:10,popularity/pure/test,configs/pure.yaml,Recall@100,0.192768
+2026-07-07 10:10,popularity/pure/test,configs/pure.yaml,NDCG@100,0.061694
+2026-07-07 10:10,popularity/pure/test,configs/pure.yaml,Recall@500,0.439678
+2026-07-07 10:10,popularity/pure/test,configs/pure.yaml,NDCG@500,0.099482
+2026-07-07 10:10,itemcf/pure/val,configs/pure.yaml,Recall@50,0.213801
+2026-07-07 10:10,itemcf/pure/val,configs/pure.yaml,NDCG@50,0.078604
+2026-07-07 10:10,itemcf/pure/val,configs/pure.yaml,Recall@100,0.315589
+2026-07-07 10:10,itemcf/pure/val,configs/pure.yaml,NDCG@100,0.098829
+2026-07-07 10:10,itemcf/pure/val,configs/pure.yaml,Recall@500,0.607153
+2026-07-07 10:10,itemcf/pure/val,configs/pure.yaml,NDCG@500,0.145004
+2026-07-07 10:10,itemcf/pure/test,configs/pure.yaml,Recall@50,0.191358
+2026-07-07 10:10,itemcf/pure/test,configs/pure.yaml,NDCG@50,0.069225
+2026-07-07 10:10,itemcf/pure/test,configs/pure.yaml,Recall@100,0.283696
+2026-07-07 10:10,itemcf/pure/test,configs/pure.yaml,NDCG@100,0.087124
+2026-07-07 10:10,itemcf/pure/test,configs/pure.yaml,Recall@500,0.568344
+2026-07-07 10:10,itemcf/pure/test,configs/pure.yaml,NDCG@500,0.131094
+2026-07-07 10:11,two_tower/pure/val/ep0,configs/pure.yaml,Recall@50,0.066032
+2026-07-07 10:11,two_tower/pure/val/ep0,configs/pure.yaml,NDCG@50,0.022533
+2026-07-07 10:11,two_tower/pure/val/ep0,configs/pure.yaml,Recall@100,0.110419
+2026-07-07 10:11,two_tower/pure/val/ep0,configs/pure.yaml,NDCG@100,0.031076
+2026-07-07 10:11,two_tower/pure/val/ep0,configs/pure.yaml,Recall@500,0.332651
+2026-07-07 10:11,two_tower/pure/val/ep0,configs/pure.yaml,NDCG@500,0.064884
+2026-07-07 10:11,two_tower/pure/val/ep1,configs/pure.yaml,Recall@50,0.063739
+2026-07-07 10:11,two_tower/pure/val/ep1,configs/pure.yaml,NDCG@50,0.020996
+2026-07-07 10:11,two_tower/pure/val/ep1,configs/pure.yaml,Recall@100,0.112019
+2026-07-07 10:11,two_tower/pure/val/ep1,configs/pure.yaml,NDCG@100,0.030369
+2026-07-07 10:11,two_tower/pure/val/ep1,configs/pure.yaml,Recall@500,0.368258
+2026-07-07 10:11,two_tower/pure/val/ep1,configs/pure.yaml,NDCG@500,0.069250
+2026-07-07 10:11,two_tower/pure/val/ep2,configs/pure.yaml,Recall@50,0.070445
+2026-07-07 10:11,two_tower/pure/val/ep2,configs/pure.yaml,NDCG@50,0.023095
+2026-07-07 10:11,two_tower/pure/val/ep2,configs/pure.yaml,Recall@100,0.125808
+2026-07-07 10:11,two_tower/pure/val/ep2,configs/pure.yaml,NDCG@100,0.033872
+2026-07-07 10:11,two_tower/pure/val/ep2,configs/pure.yaml,Recall@500,0.409877
+2026-07-07 10:11,two_tower/pure/val/ep2,configs/pure.yaml,NDCG@500,0.077036
+2026-07-07 10:11,two_tower/pure/test,configs/pure.yaml,Recall@50,0.073546
+2026-07-07 10:11,two_tower/pure/test,configs/pure.yaml,NDCG@50,0.023960
+2026-07-07 10:11,two_tower/pure/test,configs/pure.yaml,Recall@100,0.127318
+2026-07-07 10:11,two_tower/pure/test,configs/pure.yaml,NDCG@100,0.034196
+2026-07-07 10:11,two_tower/pure/test,configs/pure.yaml,Recall@500,0.406434
+2026-07-07 10:11,two_tower/pure/test,configs/pure.yaml,NDCG@500,0.075909
+2026-07-07 10:19,two_tower/pure/val/ep0,configs/pure.yaml,Recall@50,0.236839
+2026-07-07 10:19,two_tower/pure/val/ep0,configs/pure.yaml,NDCG@50,0.088246
+2026-07-07 10:19,two_tower/pure/val/ep0,configs/pure.yaml,Recall@100,0.352525
+2026-07-07 10:19,two_tower/pure/val/ep0,configs/pure.yaml,NDCG@100,0.110918
+2026-07-07 10:19,two_tower/pure/val/ep0,configs/pure.yaml,Recall@500,0.714424
+2026-07-07 10:19,two_tower/pure/val/ep0,configs/pure.yaml,NDCG@500,0.167739
+2026-07-07 10:20,two_tower/pure/val/ep1,configs/pure.yaml,Recall@50,0.257711
+2026-07-07 10:20,two_tower/pure/val/ep1,configs/pure.yaml,NDCG@50,0.095663
+2026-07-07 10:20,two_tower/pure/val/ep1,configs/pure.yaml,Recall@100,0.383782
+2026-07-07 10:20,two_tower/pure/val/ep1,configs/pure.yaml,NDCG@100,0.120501
+2026-07-07 10:20,two_tower/pure/val/ep1,configs/pure.yaml,Recall@500,0.742989
+2026-07-07 10:20,two_tower/pure/val/ep1,configs/pure.yaml,NDCG@500,0.177027
+2026-07-07 10:20,two_tower/pure/val/ep2,configs/pure.yaml,Recall@50,0.267120
+2026-07-07 10:20,two_tower/pure/val/ep2,configs/pure.yaml,NDCG@50,0.098440
+2026-07-07 10:20,two_tower/pure/val/ep2,configs/pure.yaml,Recall@100,0.393510
+2026-07-07 10:20,two_tower/pure/val/ep2,configs/pure.yaml,NDCG@100,0.123438
+2026-07-07 10:20,two_tower/pure/val/ep2,configs/pure.yaml,Recall@500,0.760274
+2026-07-07 10:20,two_tower/pure/val/ep2,configs/pure.yaml,NDCG@500,0.181081
+2026-07-07 10:21,two_tower/pure/val/ep3,configs/pure.yaml,Recall@50,0.259466
+2026-07-07 10:21,two_tower/pure/val/ep3,configs/pure.yaml,NDCG@50,0.094237
+2026-07-07 10:21,two_tower/pure/val/ep3,configs/pure.yaml,Recall@100,0.394509
+2026-07-07 10:21,two_tower/pure/val/ep3,configs/pure.yaml,NDCG@100,0.120792
+2026-07-07 10:21,two_tower/pure/val/ep3,configs/pure.yaml,Recall@500,0.757495
+2026-07-07 10:21,two_tower/pure/val/ep3,configs/pure.yaml,NDCG@500,0.177995
+2026-07-07 10:21,two_tower/pure/val/ep4,configs/pure.yaml,Recall@50,0.253073
+2026-07-07 10:21,two_tower/pure/val/ep4,configs/pure.yaml,NDCG@50,0.091250
+2026-07-07 10:21,two_tower/pure/val/ep4,configs/pure.yaml,Recall@100,0.384860
+2026-07-07 10:21,two_tower/pure/val/ep4,configs/pure.yaml,NDCG@100,0.117138
+2026-07-07 10:21,two_tower/pure/val/ep4,configs/pure.yaml,Recall@500,0.753043
+2026-07-07 10:21,two_tower/pure/val/ep4,configs/pure.yaml,NDCG@500,0.175110
+2026-07-07 10:21,two_tower/pure/val/ep5,configs/pure.yaml,Recall@50,0.251699
+2026-07-07 10:21,two_tower/pure/val/ep5,configs/pure.yaml,NDCG@50,0.091006
+2026-07-07 10:21,two_tower/pure/val/ep5,configs/pure.yaml,Recall@100,0.380564
+2026-07-07 10:21,two_tower/pure/val/ep5,configs/pure.yaml,NDCG@100,0.116489
+2026-07-07 10:21,two_tower/pure/val/ep5,configs/pure.yaml,Recall@500,0.750120
+2026-07-07 10:21,two_tower/pure/val/ep5,configs/pure.yaml,NDCG@500,0.174596
+2026-07-07 10:22,two_tower/pure/val/ep6,configs/pure.yaml,Recall@50,0.242757
+2026-07-07 10:22,two_tower/pure/val/ep6,configs/pure.yaml,NDCG@50,0.086712
+2026-07-07 10:22,two_tower/pure/val/ep6,configs/pure.yaml,Recall@100,0.375562
+2026-07-07 10:22,two_tower/pure/val/ep6,configs/pure.yaml,NDCG@100,0.112791
+2026-07-07 10:22,two_tower/pure/val/ep6,configs/pure.yaml,Recall@500,0.745728
+2026-07-07 10:22,two_tower/pure/val/ep6,configs/pure.yaml,NDCG@500,0.171087
+2026-07-07 10:22,two_tower/pure/val/ep7,configs/pure.yaml,Recall@50,0.244567
+2026-07-07 10:22,two_tower/pure/val/ep7,configs/pure.yaml,NDCG@50,0.086856
+2026-07-07 10:22,two_tower/pure/val/ep7,configs/pure.yaml,Recall@100,0.370438
+2026-07-07 10:22,two_tower/pure/val/ep7,configs/pure.yaml,NDCG@100,0.111774
+2026-07-07 10:22,two_tower/pure/val/ep7,configs/pure.yaml,Recall@500,0.742191
+2026-07-07 10:22,two_tower/pure/val/ep7,configs/pure.yaml,NDCG@500,0.170169
+2026-07-07 10:22,two_tower/pure/val/ep8,configs/pure.yaml,Recall@50,0.230530
+2026-07-07 10:22,two_tower/pure/val/ep8,configs/pure.yaml,NDCG@50,0.081035
+2026-07-07 10:22,two_tower/pure/val/ep8,configs/pure.yaml,Recall@100,0.357220
+2026-07-07 10:22,two_tower/pure/val/ep8,configs/pure.yaml,NDCG@100,0.106214
+2026-07-07 10:22,two_tower/pure/val/ep8,configs/pure.yaml,Recall@500,0.730614
+2026-07-07 10:22,two_tower/pure/val/ep8,configs/pure.yaml,NDCG@500,0.164734
+2026-07-07 10:23,two_tower/pure/val/ep9,configs/pure.yaml,Recall@50,0.226398
+2026-07-07 10:23,two_tower/pure/val/ep9,configs/pure.yaml,NDCG@50,0.080889
+2026-07-07 10:23,two_tower/pure/val/ep9,configs/pure.yaml,Recall@100,0.351855
+2026-07-07 10:23,two_tower/pure/val/ep9,configs/pure.yaml,NDCG@100,0.105731
+2026-07-07 10:23,two_tower/pure/val/ep9,configs/pure.yaml,Recall@500,0.723089
+2026-07-07 10:23,two_tower/pure/val/ep9,configs/pure.yaml,NDCG@500,0.164061
+2026-07-07 10:23,two_tower/pure/test,configs/pure.yaml,Recall@50,0.199044
+2026-07-07 10:23,two_tower/pure/test,configs/pure.yaml,NDCG@50,0.069006
+2026-07-07 10:23,two_tower/pure/test,configs/pure.yaml,Recall@100,0.312735
+2026-07-07 10:23,two_tower/pure/test,configs/pure.yaml,NDCG@100,0.090910
+2026-07-07 10:23,two_tower/pure/test,configs/pure.yaml,Recall@500,0.680005
+2026-07-07 10:23,two_tower/pure/test,configs/pure.yaml,NDCG@500,0.147316
+2026-07-07 14:47,popularity/1k/val,configs/1k.yaml,Recall@50,0.002718
+2026-07-07 14:47,popularity/1k/val,configs/1k.yaml,NDCG@50,0.007324
+2026-07-07 14:47,popularity/1k/val,configs/1k.yaml,Recall@100,0.004751
+2026-07-07 14:47,popularity/1k/val,configs/1k.yaml,NDCG@100,0.007082
+2026-07-07 14:47,popularity/1k/val,configs/1k.yaml,Recall@500,0.026360
+2026-07-07 14:47,popularity/1k/val,configs/1k.yaml,NDCG@500,0.016703
+2026-07-07 14:47,popularity/1k/test,configs/1k.yaml,Recall@50,0.002107
+2026-07-07 14:47,popularity/1k/test,configs/1k.yaml,NDCG@50,0.004677
+2026-07-07 14:47,popularity/1k/test,configs/1k.yaml,Recall@100,0.003502
+2026-07-07 14:47,popularity/1k/test,configs/1k.yaml,NDCG@100,0.004637
+2026-07-07 14:47,popularity/1k/test,configs/1k.yaml,Recall@500,0.015932
+2026-07-07 14:47,popularity/1k/test,configs/1k.yaml,NDCG@500,0.010370
+2026-07-07 14:47,itemcf/1k/val,configs/1k.yaml,Recall@50,0.013926
+2026-07-07 14:47,itemcf/1k/val,configs/1k.yaml,NDCG@50,0.026260
+2026-07-07 14:47,itemcf/1k/val,configs/1k.yaml,Recall@100,0.023132
+2026-07-07 14:47,itemcf/1k/val,configs/1k.yaml,NDCG@100,0.026220
+2026-07-07 14:47,itemcf/1k/val,configs/1k.yaml,Recall@500,0.072052
+2026-07-07 14:47,itemcf/1k/val,configs/1k.yaml,NDCG@500,0.046709
+2026-07-07 14:47,itemcf/1k/test,configs/1k.yaml,Recall@50,0.004713
+2026-07-07 14:47,itemcf/1k/test,configs/1k.yaml,NDCG@50,0.007841
+2026-07-07 14:47,itemcf/1k/test,configs/1k.yaml,Recall@100,0.008048
+2026-07-07 14:47,itemcf/1k/test,configs/1k.yaml,NDCG@100,0.008745
+2026-07-07 14:47,itemcf/1k/test,configs/1k.yaml,Recall@500,0.029554
+2026-07-07 14:47,itemcf/1k/test,configs/1k.yaml,NDCG@500,0.017982
+2026-07-07 14:47,two_tower/1k/val/ep0,configs/1k.yaml,Recall@50,0.018626
+2026-07-07 14:47,two_tower/1k/val/ep0,configs/1k.yaml,NDCG@50,0.036044
+2026-07-07 14:47,two_tower/1k/val/ep0,configs/1k.yaml,Recall@100,0.030724
+2026-07-07 14:47,two_tower/1k/val/ep0,configs/1k.yaml,NDCG@100,0.035892
+2026-07-07 14:47,two_tower/1k/val/ep0,configs/1k.yaml,Recall@500,0.096714
+2026-07-07 14:47,two_tower/1k/val/ep0,configs/1k.yaml,NDCG@500,0.062972
+2026-07-07 14:48,two_tower/1k/val/ep1,configs/1k.yaml,Recall@50,0.022950
+2026-07-07 14:48,two_tower/1k/val/ep1,configs/1k.yaml,NDCG@50,0.044649
+2026-07-07 14:48,two_tower/1k/val/ep1,configs/1k.yaml,Recall@100,0.038348
+2026-07-07 14:48,two_tower/1k/val/ep1,configs/1k.yaml,NDCG@100,0.044251
+2026-07-07 14:48,two_tower/1k/val/ep1,configs/1k.yaml,Recall@500,0.114751
+2026-07-07 14:48,two_tower/1k/val/ep1,configs/1k.yaml,NDCG@500,0.076092
+2026-07-07 14:48,two_tower/1k/val/ep2,configs/1k.yaml,Recall@50,0.026404
+2026-07-07 14:48,two_tower/1k/val/ep2,configs/1k.yaml,NDCG@50,0.049057
+2026-07-07 14:48,two_tower/1k/val/ep2,configs/1k.yaml,Recall@100,0.043210
+2026-07-07 14:48,two_tower/1k/val/ep2,configs/1k.yaml,NDCG@100,0.048802
+2026-07-07 14:48,two_tower/1k/val/ep2,configs/1k.yaml,Recall@500,0.123044
+2026-07-07 14:48,two_tower/1k/val/ep2,configs/1k.yaml,NDCG@500,0.081742
+2026-07-07 14:48,two_tower/1k/val/ep3,configs/1k.yaml,Recall@50,0.028095
+2026-07-07 14:48,two_tower/1k/val/ep3,configs/1k.yaml,NDCG@50,0.053504
+2026-07-07 14:48,two_tower/1k/val/ep3,configs/1k.yaml,Recall@100,0.047066
+2026-07-07 14:48,two_tower/1k/val/ep3,configs/1k.yaml,NDCG@100,0.053561
+2026-07-07 14:48,two_tower/1k/val/ep3,configs/1k.yaml,Recall@500,0.130837
+2026-07-07 14:48,two_tower/1k/val/ep3,configs/1k.yaml,NDCG@500,0.087968
+2026-07-07 14:48,two_tower/1k/val/ep4,configs/1k.yaml,Recall@50,0.028572
+2026-07-07 14:48,two_tower/1k/val/ep4,configs/1k.yaml,NDCG@50,0.054146
+2026-07-07 14:48,two_tower/1k/val/ep4,configs/1k.yaml,Recall@100,0.047722
+2026-07-07 14:48,two_tower/1k/val/ep4,configs/1k.yaml,NDCG@100,0.053600
+2026-07-07 14:48,two_tower/1k/val/ep4,configs/1k.yaml,Recall@500,0.132251
+2026-07-07 14:48,two_tower/1k/val/ep4,configs/1k.yaml,NDCG@500,0.088406
+2026-07-07 14:48,two_tower/1k/test,configs/1k.yaml,Recall@50,0.010063
+2026-07-07 14:48,two_tower/1k/test,configs/1k.yaml,NDCG@50,0.016634
+2026-07-07 14:48,two_tower/1k/test,configs/1k.yaml,Recall@100,0.016475
+2026-07-07 14:48,two_tower/1k/test,configs/1k.yaml,NDCG@100,0.017638
+2026-07-07 14:48,two_tower/1k/test,configs/1k.yaml,Recall@500,0.054132
+2026-07-07 14:48,two_tower/1k/test,configs/1k.yaml,NDCG@500,0.034000
+2026-07-07 15:43,din/pure/val/ep0,configs/pure.yaml,AUC,0.735190
+2026-07-07 15:43,din/pure/val/ep0,configs/pure.yaml,GAUC,0.631175
+2026-07-07 15:44,din/pure/val/ep1,configs/pure.yaml,AUC,0.734341
+2026-07-07 15:44,din/pure/val/ep1,configs/pure.yaml,GAUC,0.630867
+2026-07-07 15:45,din/pure/val/ep2,configs/pure.yaml,AUC,0.730221
+2026-07-07 15:45,din/pure/val/ep2,configs/pure.yaml,GAUC,0.629711
+2026-07-07 15:46,din/pure/test,configs/pure.yaml,AUC,0.732751
+2026-07-07 15:46,din/pure/test,configs/pure.yaml,GAUC,0.626790
+2026-07-07 15:53,din/1k/val/ep0,configs/1k.yaml,AUC,0.720987
+2026-07-07 15:53,din/1k/val/ep0,configs/1k.yaml,GAUC,0.582486
+2026-07-07 16:06,din/1k/val/ep1,configs/1k.yaml,AUC,0.697159
+2026-07-07 16:06,din/1k/val/ep1,configs/1k.yaml,GAUC,0.573077
+2026-07-07 16:06,din/1k/test,configs/1k.yaml,AUC,0.715856
+2026-07-07 16:06,din/1k/test,configs/1k.yaml,GAUC,0.576901
+2026-07-07 16:09,two_tower/pure/val/ep0,configs/pure.yaml,Recall@50,0.236839
+2026-07-07 16:09,two_tower/pure/val/ep0,configs/pure.yaml,NDCG@50,0.088246
+2026-07-07 16:09,two_tower/pure/val/ep0,configs/pure.yaml,Recall@100,0.352525
+2026-07-07 16:09,two_tower/pure/val/ep0,configs/pure.yaml,NDCG@100,0.110918
+2026-07-07 16:09,two_tower/pure/val/ep0,configs/pure.yaml,Recall@500,0.714424
+2026-07-07 16:09,two_tower/pure/val/ep0,configs/pure.yaml,NDCG@500,0.167739
+2026-07-07 16:09,two_tower/pure/val/ep1,configs/pure.yaml,Recall@50,0.257711
+2026-07-07 16:09,two_tower/pure/val/ep1,configs/pure.yaml,NDCG@50,0.095663
+2026-07-07 16:09,two_tower/pure/val/ep1,configs/pure.yaml,Recall@100,0.383782
+2026-07-07 16:09,two_tower/pure/val/ep1,configs/pure.yaml,NDCG@100,0.120501
+2026-07-07 16:09,two_tower/pure/val/ep1,configs/pure.yaml,Recall@500,0.742989
+2026-07-07 16:09,two_tower/pure/val/ep1,configs/pure.yaml,NDCG@500,0.177027
+2026-07-07 16:09,two_tower/pure/val/ep2,configs/pure.yaml,Recall@50,0.267120
+2026-07-07 16:09,two_tower/pure/val/ep2,configs/pure.yaml,NDCG@50,0.098440
+2026-07-07 16:09,two_tower/pure/val/ep2,configs/pure.yaml,Recall@100,0.393510
+2026-07-07 16:09,two_tower/pure/val/ep2,configs/pure.yaml,NDCG@100,0.123438
+2026-07-07 16:09,two_tower/pure/val/ep2,configs/pure.yaml,Recall@500,0.760274
+2026-07-07 16:09,two_tower/pure/val/ep2,configs/pure.yaml,NDCG@500,0.181081
+2026-07-07 16:10,two_tower/pure/val/ep3,configs/pure.yaml,Recall@50,0.259466
+2026-07-07 16:10,two_tower/pure/val/ep3,configs/pure.yaml,NDCG@50,0.094237
+2026-07-07 16:10,two_tower/pure/val/ep3,configs/pure.yaml,Recall@100,0.394509
+2026-07-07 16:10,two_tower/pure/val/ep3,configs/pure.yaml,NDCG@100,0.120792
+2026-07-07 16:10,two_tower/pure/val/ep3,configs/pure.yaml,Recall@500,0.757495
+2026-07-07 16:10,two_tower/pure/val/ep3,configs/pure.yaml,NDCG@500,0.177995
+2026-07-07 16:10,two_tower/pure/val/ep4,configs/pure.yaml,Recall@50,0.253073
+2026-07-07 16:10,two_tower/pure/val/ep4,configs/pure.yaml,NDCG@50,0.091250
+2026-07-07 16:10,two_tower/pure/val/ep4,configs/pure.yaml,Recall@100,0.384860
+2026-07-07 16:10,two_tower/pure/val/ep4,configs/pure.yaml,NDCG@100,0.117138
+2026-07-07 16:10,two_tower/pure/val/ep4,configs/pure.yaml,Recall@500,0.753043
+2026-07-07 16:10,two_tower/pure/val/ep4,configs/pure.yaml,NDCG@500,0.175110
+2026-07-07 16:10,two_tower/pure/val/ep5,configs/pure.yaml,Recall@50,0.251699
+2026-07-07 16:10,two_tower/pure/val/ep5,configs/pure.yaml,NDCG@50,0.091006
+2026-07-07 16:10,two_tower/pure/val/ep5,configs/pure.yaml,Recall@100,0.380564
+2026-07-07 16:10,two_tower/pure/val/ep5,configs/pure.yaml,NDCG@100,0.116489
+2026-07-07 16:10,two_tower/pure/val/ep5,configs/pure.yaml,Recall@500,0.750120
+2026-07-07 16:10,two_tower/pure/val/ep5,configs/pure.yaml,NDCG@500,0.174596
+2026-07-07 16:10,two_tower/pure/test,configs/pure.yaml,Recall@50,0.230153
+2026-07-07 16:10,two_tower/pure/test,configs/pure.yaml,NDCG@50,0.080862
+2026-07-07 16:10,two_tower/pure/test,configs/pure.yaml,Recall@100,0.345319
+2026-07-07 16:10,two_tower/pure/test,configs/pure.yaml,NDCG@100,0.103055
+2026-07-07 16:10,two_tower/pure/test,configs/pure.yaml,Recall@500,0.713994
+2026-07-07 16:10,two_tower/pure/test,configs/pure.yaml,NDCG@500,0.159991
+2026-07-07 16:12,two_tower/1k/val/ep0,configs/1k.yaml,Recall@50,0.018626
+2026-07-07 16:12,two_tower/1k/val/ep0,configs/1k.yaml,NDCG@50,0.036044
+2026-07-07 16:12,two_tower/1k/val/ep0,configs/1k.yaml,Recall@100,0.030724
+2026-07-07 16:12,two_tower/1k/val/ep0,configs/1k.yaml,NDCG@100,0.035892
+2026-07-07 16:12,two_tower/1k/val/ep0,configs/1k.yaml,Recall@500,0.096714
+2026-07-07 16:12,two_tower/1k/val/ep0,configs/1k.yaml,NDCG@500,0.062972
+2026-07-07 16:12,two_tower/1k/val/ep1,configs/1k.yaml,Recall@50,0.022950
+2026-07-07 16:12,two_tower/1k/val/ep1,configs/1k.yaml,NDCG@50,0.044649
+2026-07-07 16:12,two_tower/1k/val/ep1,configs/1k.yaml,Recall@100,0.038348
+2026-07-07 16:12,two_tower/1k/val/ep1,configs/1k.yaml,NDCG@100,0.044251
+2026-07-07 16:12,two_tower/1k/val/ep1,configs/1k.yaml,Recall@500,0.114751
+2026-07-07 16:12,two_tower/1k/val/ep1,configs/1k.yaml,NDCG@500,0.076092
+2026-07-07 16:12,two_tower/1k/val/ep2,configs/1k.yaml,Recall@50,0.026404
+2026-07-07 16:12,two_tower/1k/val/ep2,configs/1k.yaml,NDCG@50,0.049057
+2026-07-07 16:12,two_tower/1k/val/ep2,configs/1k.yaml,Recall@100,0.043210
+2026-07-07 16:12,two_tower/1k/val/ep2,configs/1k.yaml,NDCG@100,0.048802
+2026-07-07 16:12,two_tower/1k/val/ep2,configs/1k.yaml,Recall@500,0.123044
+2026-07-07 16:12,two_tower/1k/val/ep2,configs/1k.yaml,NDCG@500,0.081742
+2026-07-07 16:12,two_tower/1k/val/ep3,configs/1k.yaml,Recall@50,0.028095
+2026-07-07 16:12,two_tower/1k/val/ep3,configs/1k.yaml,NDCG@50,0.053504
+2026-07-07 16:12,two_tower/1k/val/ep3,configs/1k.yaml,Recall@100,0.047066
+2026-07-07 16:12,two_tower/1k/val/ep3,configs/1k.yaml,NDCG@100,0.053561
+2026-07-07 16:12,two_tower/1k/val/ep3,configs/1k.yaml,Recall@500,0.130837
+2026-07-07 16:12,two_tower/1k/val/ep3,configs/1k.yaml,NDCG@500,0.087968
+2026-07-07 16:13,two_tower/1k/val/ep4,configs/1k.yaml,Recall@50,0.028572
+2026-07-07 16:13,two_tower/1k/val/ep4,configs/1k.yaml,NDCG@50,0.054146
+2026-07-07 16:13,two_tower/1k/val/ep4,configs/1k.yaml,Recall@100,0.047722
+2026-07-07 16:13,two_tower/1k/val/ep4,configs/1k.yaml,NDCG@100,0.053600
+2026-07-07 16:13,two_tower/1k/val/ep4,configs/1k.yaml,Recall@500,0.132251
+2026-07-07 16:13,two_tower/1k/val/ep4,configs/1k.yaml,NDCG@500,0.088406
+2026-07-07 16:13,two_tower/1k/val/ep5,configs/1k.yaml,Recall@50,0.029712
+2026-07-07 16:13,two_tower/1k/val/ep5,configs/1k.yaml,NDCG@50,0.054615
+2026-07-07 16:13,two_tower/1k/val/ep5,configs/1k.yaml,Recall@100,0.048766
+2026-07-07 16:13,two_tower/1k/val/ep5,configs/1k.yaml,NDCG@100,0.054809
+2026-07-07 16:13,two_tower/1k/val/ep5,configs/1k.yaml,Recall@500,0.136849
+2026-07-07 16:13,two_tower/1k/val/ep5,configs/1k.yaml,NDCG@500,0.090597
+2026-07-07 16:13,two_tower/1k/val/ep6,configs/1k.yaml,Recall@50,0.029589
+2026-07-07 16:13,two_tower/1k/val/ep6,configs/1k.yaml,NDCG@50,0.056810
+2026-07-07 16:13,two_tower/1k/val/ep6,configs/1k.yaml,Recall@100,0.050566
+2026-07-07 16:13,two_tower/1k/val/ep6,configs/1k.yaml,NDCG@100,0.056820
+2026-07-07 16:13,two_tower/1k/val/ep6,configs/1k.yaml,Recall@500,0.139506
+2026-07-07 16:13,two_tower/1k/val/ep6,configs/1k.yaml,NDCG@500,0.092815
+2026-07-07 16:13,two_tower/1k/val/ep7,configs/1k.yaml,Recall@50,0.030629
+2026-07-07 16:13,two_tower/1k/val/ep7,configs/1k.yaml,NDCG@50,0.057459
+2026-07-07 16:13,two_tower/1k/val/ep7,configs/1k.yaml,Recall@100,0.050589
+2026-07-07 16:13,two_tower/1k/val/ep7,configs/1k.yaml,NDCG@100,0.056935
+2026-07-07 16:13,two_tower/1k/val/ep7,configs/1k.yaml,Recall@500,0.138336
+2026-07-07 16:13,two_tower/1k/val/ep7,configs/1k.yaml,NDCG@500,0.092417
+2026-07-07 16:13,two_tower/1k/val/ep8,configs/1k.yaml,Recall@50,0.030843
+2026-07-07 16:13,two_tower/1k/val/ep8,configs/1k.yaml,NDCG@50,0.058695
+2026-07-07 16:13,two_tower/1k/val/ep8,configs/1k.yaml,Recall@100,0.051529
+2026-07-07 16:13,two_tower/1k/val/ep8,configs/1k.yaml,NDCG@100,0.058379
+2026-07-07 16:13,two_tower/1k/val/ep8,configs/1k.yaml,Recall@500,0.140783
+2026-07-07 16:13,two_tower/1k/val/ep8,configs/1k.yaml,NDCG@500,0.094349
+2026-07-07 16:14,two_tower/1k/val/ep9,configs/1k.yaml,Recall@50,0.028971
+2026-07-07 16:14,two_tower/1k/val/ep9,configs/1k.yaml,NDCG@50,0.056216
+2026-07-07 16:14,two_tower/1k/val/ep9,configs/1k.yaml,Recall@100,0.048973
+2026-07-07 16:14,two_tower/1k/val/ep9,configs/1k.yaml,NDCG@100,0.056409
+2026-07-07 16:14,two_tower/1k/val/ep9,configs/1k.yaml,Recall@500,0.137307
+2026-07-07 16:14,two_tower/1k/val/ep9,configs/1k.yaml,NDCG@500,0.092317
+2026-07-07 16:14,two_tower/1k/val/ep10,configs/1k.yaml,Recall@50,0.029533
+2026-07-07 16:14,two_tower/1k/val/ep10,configs/1k.yaml,NDCG@50,0.055956
+2026-07-07 16:14,two_tower/1k/val/ep10,configs/1k.yaml,Recall@100,0.048874
+2026-07-07 16:14,two_tower/1k/val/ep10,configs/1k.yaml,NDCG@100,0.056245
+2026-07-07 16:14,two_tower/1k/val/ep10,configs/1k.yaml,Recall@500,0.138887
+2026-07-07 16:14,two_tower/1k/val/ep10,configs/1k.yaml,NDCG@500,0.092890
+2026-07-07 16:14,two_tower/1k/test,configs/1k.yaml,Recall@50,0.010050
+2026-07-07 16:14,two_tower/1k/test,configs/1k.yaml,NDCG@50,0.015793
+2026-07-07 16:14,two_tower/1k/test,configs/1k.yaml,Recall@100,0.016429
+2026-07-07 16:14,two_tower/1k/test,configs/1k.yaml,NDCG@100,0.017263
+2026-07-07 16:14,two_tower/1k/test,configs/1k.yaml,Recall@500,0.059896
+2026-07-07 16:14,two_tower/1k/test,configs/1k.yaml,NDCG@500,0.035712
+2026-07-07 16:41,sim/synth/val/ep0,configs/synth.yaml,AUC,0.497528
+2026-07-07 16:41,sim/synth/val/ep0,configs/synth.yaml,GAUC,0.495419
+2026-07-07 16:41,sim/synth/val/ep1,configs/synth.yaml,AUC,0.498887
+2026-07-07 16:41,sim/synth/val/ep1,configs/synth.yaml,GAUC,0.498252
+2026-07-07 16:41,sim/synth/test,configs/synth.yaml,AUC,0.499186
+2026-07-07 16:41,sim/synth/test,configs/synth.yaml,GAUC,0.501925
+2026-07-07 17:45,sim/1k/val/ep0,configs/1k.yaml,AUC,0.720403
+2026-07-07 17:45,sim/1k/val/ep0,configs/1k.yaml,GAUC,0.582449
+2026-07-07 17:51,sim/1k/val/ep1,configs/1k.yaml,AUC,0.686740
+2026-07-07 17:51,sim/1k/val/ep1,configs/1k.yaml,GAUC,0.569819
+2026-07-07 17:52,sim/1k/test,configs/1k.yaml,AUC,0.714583
+2026-07-07 17:52,sim/1k/test,configs/1k.yaml,GAUC,0.574722
+2026-07-08 11:17,sim-v2/1k/val/ep0,configs/1k.yaml (rank.exp_suffix=-v2),AUC,0.721885
+2026-07-08 11:17,sim-v2/1k/val/ep0,configs/1k.yaml (rank.exp_suffix=-v2),GAUC,0.585069
+2026-07-08 11:23,sim-v2/1k/val/ep1,configs/1k.yaml (rank.exp_suffix=-v2),AUC,0.694834
+2026-07-08 11:23,sim-v2/1k/val/ep1,configs/1k.yaml (rank.exp_suffix=-v2),GAUC,0.574353
+2026-07-08 11:24,sim-v2/1k/test,configs/1k.yaml (rank.exp_suffix=-v2),AUC,0.714845
+2026-07-08 11:24,sim-v2/1k/test,configs/1k.yaml (rank.exp_suffix=-v2),GAUC,0.577482
+2026-07-08 20:01,sim-sem/1k/val/ep0,configs/1k.yaml (rank.exp_suffix=-sem),AUC,0.733548
+2026-07-08 20:01,sim-sem/1k/val/ep0,configs/1k.yaml (rank.exp_suffix=-sem),GAUC,0.596793
+2026-07-08 20:09,sim-sem/1k/val/ep1,configs/1k.yaml (rank.exp_suffix=-sem),AUC,0.698721
+2026-07-08 20:09,sim-sem/1k/val/ep1,configs/1k.yaml (rank.exp_suffix=-sem),GAUC,0.582959
+2026-07-08 20:10,sim-sem/1k/test,configs/1k.yaml (rank.exp_suffix=-sem),AUC,0.729873
+2026-07-08 20:10,sim-sem/1k/test,configs/1k.yaml (rank.exp_suffix=-sem),GAUC,0.594741
+2026-07-08 20:17,sim-nosem/1k/val/ep0,configs/1k.yaml (rank.use_sem=false rank.exp_suffix=-nosem),AUC,0.721885
+2026-07-08 20:17,sim-nosem/1k/val/ep0,configs/1k.yaml (rank.use_sem=false rank.exp_suffix=-nosem),GAUC,0.585069
+2026-07-11 14:11,sim-sem/1k/val/ep0,configs/1k.yaml (rank.exp_suffix=-sem),AUC,0.733548
+2026-07-11 14:11,sim-sem/1k/val/ep0,configs/1k.yaml (rank.exp_suffix=-sem),GAUC,0.596793
+2026-07-11 14:19,sim-sem/1k/val/ep1,configs/1k.yaml (rank.exp_suffix=-sem),AUC,0.698721
+2026-07-11 14:19,sim-sem/1k/val/ep1,configs/1k.yaml (rank.exp_suffix=-sem),GAUC,0.582959
+2026-07-11 14:20,sim-sem/1k/test,configs/1k.yaml (rank.exp_suffix=-sem),AUC,0.729873
+2026-07-11 14:20,sim-sem/1k/test,configs/1k.yaml (rank.exp_suffix=-sem),GAUC,0.594741
+2026-07-11 14:27,sim-nosem/1k/val/ep0,configs/1k.yaml (rank.use_sem=false rank.exp_suffix=-nosem),AUC,0.721885
+2026-07-11 14:27,sim-nosem/1k/val/ep0,configs/1k.yaml (rank.use_sem=false rank.exp_suffix=-nosem),GAUC,0.585069
+2026-07-11 14:34,sim-nosem/1k/val/ep1,configs/1k.yaml (rank.use_sem=false rank.exp_suffix=-nosem),AUC,0.694834
+2026-07-11 14:34,sim-nosem/1k/val/ep1,configs/1k.yaml (rank.use_sem=false rank.exp_suffix=-nosem),GAUC,0.574353
+2026-07-11 14:35,sim-nosem/1k/test,configs/1k.yaml (rank.use_sem=false rank.exp_suffix=-nosem),AUC,0.714845
+2026-07-11 14:35,sim-nosem/1k/test,configs/1k.yaml (rank.use_sem=false rank.exp_suffix=-nosem),GAUC,0.577482
+2026-07-11 14:41,din-din-sem/1k/val/ep0,configs/1k.yaml (rank.model=din rank.exp_suffix=-din-sem),AUC,0.733931
+2026-07-11 14:41,din-din-sem/1k/val/ep0,configs/1k.yaml (rank.model=din rank.exp_suffix=-din-sem),GAUC,0.597889
+2026-07-11 14:47,din-din-sem/1k/val/ep1,configs/1k.yaml (rank.model=din rank.exp_suffix=-din-sem),AUC,0.710898
+2026-07-11 14:47,din-din-sem/1k/val/ep1,configs/1k.yaml (rank.model=din rank.exp_suffix=-din-sem),GAUC,0.584703
+2026-07-11 14:48,din-din-sem/1k/test,configs/1k.yaml (rank.model=din rank.exp_suffix=-din-sem),AUC,0.729080
+2026-07-11 14:48,din-din-sem/1k/test,configs/1k.yaml (rank.model=din rank.exp_suffix=-din-sem),GAUC,0.594309
+2026-07-11 15:48,bucket/sim-sem/1k,configs/1k.yaml (rank.exp_suffix=-sem),AUC[0(纯新)],0.729470
+2026-07-11 15:48,bucket/sim-sem/1k,configs/1k.yaml (rank.exp_suffix=-sem),AUC[1-9],0.725987
+2026-07-11 15:48,bucket/sim-sem/1k,configs/1k.yaml (rank.exp_suffix=-sem),AUC[10-29],0.720446
+2026-07-11 15:48,bucket/sim-sem/1k,configs/1k.yaml (rank.exp_suffix=-sem),AUC[30-99],0.718430
+2026-07-11 15:48,bucket/sim-sem/1k,configs/1k.yaml (rank.exp_suffix=-sem),AUC[100+],0.721765
+2026-07-11 15:49,bucket/sim-nosem/1k,configs/1k.yaml (rank.use_sem=false rank.exp_suffix=-nosem),AUC[0(纯新)],0.713071
+2026-07-11 15:49,bucket/sim-nosem/1k,configs/1k.yaml (rank.use_sem=false rank.exp_suffix=-nosem),AUC[1-9],0.712003
+2026-07-11 15:49,bucket/sim-nosem/1k,configs/1k.yaml (rank.use_sem=false rank.exp_suffix=-nosem),AUC[10-29],0.712249
+2026-07-11 15:49,bucket/sim-nosem/1k,configs/1k.yaml (rank.use_sem=false rank.exp_suffix=-nosem),AUC[30-99],0.714824
+2026-07-11 15:49,bucket/sim-nosem/1k,configs/1k.yaml (rank.use_sem=false rank.exp_suffix=-nosem),AUC[100+],0.716674
+2026-07-11 16:29,mmoe-sem/1k/val/ep0,configs/1k.yaml (rank.exp_suffix=-sem),AUC/is_click,0.734667
+2026-07-11 16:29,mmoe-sem/1k/val/ep0,configs/1k.yaml (rank.exp_suffix=-sem),GAUC/is_click,0.597879
+2026-07-11 16:29,mmoe-sem/1k/val/ep0,configs/1k.yaml (rank.exp_suffix=-sem),AUC/long_view,0.748529
+2026-07-11 16:29,mmoe-sem/1k/val/ep0,configs/1k.yaml (rank.exp_suffix=-sem),GAUC/long_view,0.619409
+2026-07-11 16:29,mmoe-sem/1k/val/ep0,configs/1k.yaml (rank.exp_suffix=-sem),AUC/is_like,0.913131
+2026-07-11 16:29,mmoe-sem/1k/val/ep0,configs/1k.yaml (rank.exp_suffix=-sem),GAUC/is_like,0.635629
+2026-07-11 16:37,mmoe-sem/1k/val/ep1,configs/1k.yaml (rank.exp_suffix=-sem),AUC/is_click,0.715158
+2026-07-11 16:37,mmoe-sem/1k/val/ep1,configs/1k.yaml (rank.exp_suffix=-sem),GAUC/is_click,0.587255
+2026-07-11 16:37,mmoe-sem/1k/val/ep1,configs/1k.yaml (rank.exp_suffix=-sem),AUC/long_view,0.729536
+2026-07-11 16:37,mmoe-sem/1k/val/ep1,configs/1k.yaml (rank.exp_suffix=-sem),GAUC/long_view,0.608499
+2026-07-11 16:37,mmoe-sem/1k/val/ep1,configs/1k.yaml (rank.exp_suffix=-sem),AUC/is_like,0.896858
+2026-07-11 16:37,mmoe-sem/1k/val/ep1,configs/1k.yaml (rank.exp_suffix=-sem),GAUC/is_like,0.596467
+2026-07-11 16:38,mmoe-sem/1k/test,configs/1k.yaml (rank.exp_suffix=-sem),AUC/is_click,0.730188
+2026-07-11 16:38,mmoe-sem/1k/test,configs/1k.yaml (rank.exp_suffix=-sem),GAUC/is_click,0.593910
+2026-07-11 16:38,mmoe-sem/1k/test,configs/1k.yaml (rank.exp_suffix=-sem),AUC/long_view,0.741948
+2026-07-11 16:38,mmoe-sem/1k/test,configs/1k.yaml (rank.exp_suffix=-sem),GAUC/long_view,0.615203
+2026-07-11 16:38,mmoe-sem/1k/test,configs/1k.yaml (rank.exp_suffix=-sem),AUC/is_like,0.917954
+2026-07-11 16:38,mmoe-sem/1k/test,configs/1k.yaml (rank.exp_suffix=-sem),GAUC/is_like,0.596140

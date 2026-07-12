@@ -14,7 +14,15 @@
 亮点:随机曝光日志上的**无偏评估**确认语义增益非曝光偏差产物;MMoE 三任务无损扩展(long_view GAUC 0.615);
 长序列模块经历"重叠检索→不相交检索→细粒度键"三次有据可查的问题定位迭代;全实验流水在 `reports/results.csv`。
 
-📄 **[完整实验报告](reports/项目实验报告.md)** · 🔍 **[Case Study(语义近邻/救回案例)](reports/case_study.md)**
+📄 **[完整实验报告](reports/项目实验报告.md)** · 🔍 **[Case Study(语义近邻/救回案例)](reports/case_study.md)** · 📋 **[产品决策文档(指标体系/权衡/AB方案)](docs/产品决策文档.md)**
+
+交互 Demo(选用户 → 全候选打分 → Top-10 推荐 + 中文标题 + 推荐理由):
+
+```bash
+pip install streamlit
+python -m src.data.build_caption_cache --config configs/1k.yaml   # 一次性
+streamlit run demo/app.py
+```
 
 ## 环境
 

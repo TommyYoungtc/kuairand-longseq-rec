@@ -48,12 +48,13 @@ def main(cfg):
     if rk.get("use_sem", False):
         sem = torch.from_numpy(np.load(cfg.out / "sem_emb.npy")).to(device)
 
+    gsu_key = rk.get("gsu_key", "tag1")
     inter = pd.read_parquet(cfg.out / "interactions.parquet",
-                            columns=["uid", "iid_h", "vid", "tag1", "time_ms", cfg.main_label])
+                            columns=["uid", "iid_h", "vid", "tag1", "cat2", "time_ms", cfg.main_label])
     clicks = inter[inter[cfg.main_label] == 1].drop(columns=[cfg.main_label])
     del inter
     history = UserHistory(clicks)
-    tag_history = TagHistory(clicks)
+    tag_history = TagHistory(clicks, gsu_key)
     del clicks
 
     def load_split(name, sample=0):
@@ -61,7 +62,7 @@ def main(cfg):
         if sample and len(df) > sample:
             df = df.sample(sample, random_state=cfg.seed)
         return RankDatasetSIM(df, history, tag_history,
-                              rk["hist_len"], rk["long_topk"], tasks)
+                              rk["hist_len"], rk["long_topk"], tasks, gsu_key)
 
     ds_train = load_split("train")
     ds_val = load_split("val", rk["val_sample"])

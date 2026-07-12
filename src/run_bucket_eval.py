@@ -35,12 +35,13 @@ def main(cfg):
     if rk.get("use_sem", False):
         sem = torch.from_numpy(np.load(cfg.out / "sem_emb.npy")).to(device)
 
+    gsu_key = rk.get("gsu_key", "tag1")
     inter = pd.read_parquet(cfg.out / "interactions.parquet",
-                            columns=["uid", "iid_h", "vid", "tag1", "time_ms", cfg.main_label])
+                            columns=["uid", "iid_h", "vid", "tag1", "cat2", "time_ms", cfg.main_label])
     clicks = inter[inter[cfg.main_label] == 1].drop(columns=[cfg.main_label])
     del inter
     history = UserHistory(clicks)
-    tag_history = TagHistory(clicks) if model_name == "sim" else None
+    tag_history = TagHistory(clicks, gsu_key) if model_name == "sim" else None
     del clicks
 
     test = pd.read_parquet(cfg.out / "rank_test.parquet")
@@ -48,7 +49,8 @@ def main(cfg):
     cnt = test["vid"].map(train_cnt).fillna(0).astype(int).to_numpy()
 
     if model_name == "sim":
-        ds = RankDatasetSIM(test, history, tag_history, rk["hist_len"], rk["long_topk"], rk["label"])
+        ds = RankDatasetSIM(test, history, tag_history, rk["hist_len"], rk["long_topk"],
+                            rk["label"], gsu_key)
     else:
         ds = RankDataset(test, history, rk["hist_len"], rk["label"])
 

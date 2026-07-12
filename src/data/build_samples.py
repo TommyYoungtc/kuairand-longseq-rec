@@ -18,14 +18,14 @@ def main(cfg):
     test = df[df["date"] > cfg.val_end_date]
     print(f"split rows  train={len(train):,}  val={len(val):,}  test={len(test):,}")
 
-    keep_cols = ["uid", "iid", "iid_h", "vid", "author_h", "tag1", "time_ms", "date", "tab",
+    keep_cols = ["uid", "iid", "iid_h", "vid", "author_h", "tag1", "cat2", "time_ms", "date", "tab",
                  "play_time_ms", "duration_ms"] + list(cfg.labels)
     for name, part in [("train", train), ("val", val), ("test", test)]:
         part[keep_cols].to_parquet(cfg.out / f"rank_{name}.parquet", index=False)
 
     # 训练期点击序列(召回用,仅候选集内 item;iid_h 供排序序列使用)
     clicks = train[(train[cfg.main_label] == 1) & (train["iid"] > 0)]
-    clicks = clicks[["uid", "iid", "iid_h", "vid", "time_ms"]].sort_values(["uid", "time_ms"], kind="stable")
+    clicks = clicks[["uid", "iid", "iid_h", "vid", "tag1", "cat2", "time_ms"]].sort_values(["uid", "time_ms"], kind="stable")
     clicks.to_parquet(cfg.out / "train_clicks.parquet", index=False)
     print(f"train clicks: {len(clicks):,}  (users={clicks['uid'].nunique():,})")
 

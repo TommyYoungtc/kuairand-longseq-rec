@@ -46,10 +46,12 @@ class UserHistory:
 
 
 class TagHistory:
-    def __init__(self, clicks: pd.DataFrame):
+    """GSU 硬检索,检索键可配置:tag1(66个一级标签)或 cat2(数百个二级类目)。"""
+
+    def __init__(self, clicks: pd.DataFrame, key: str = "tag1"):
         clicks = clicks.sort_values(["uid", "time_ms"], kind="stable")
         self.times, self.iids, self.vids = {}, {}, {}
-        for (uid, tag), g in clicks.groupby(["uid", "tag1"]):
+        for (uid, tag), g in clicks.groupby(["uid", key]):
             self.times[(uid, tag)] = g["time_ms"].to_numpy()
             self.iids[(uid, tag)] = g["iid_h"].to_numpy()
             self.vids[(uid, tag)] = g["vid"].to_numpy()
@@ -108,14 +110,16 @@ class RankDataset(Dataset):
 class RankDatasetSIM(RankDataset):
     """SIM 用:短序列 + 不相交 GSU 长期检索双支路。"""
 
-    def __init__(self, samples, history, tag_history, hist_len, long_topk, label):
+    def __init__(self, samples, history, tag_history, hist_len, long_topk, label,
+                 gsu_key: str = "tag1"):
         super().__init__(samples, history, hist_len, label)
         self.tag_history = tag_history
         self.K = long_topk
+        self.gsu = samples[gsu_key].to_numpy()   # 检索键取值(target 的 tag1/cat2)
 
     def __getitem__(self, k):
         hist, hist_vid, n, t_start = self._short(k)
-        lh, lv = self.tag_history.search(self.uid[k], self.tag[k], t_start, self.K)
+        lh, lv = self.tag_history.search(self.uid[k], self.gsu[k], t_start, self.K)
         return (*self._base(k), torch.from_numpy(hist), torch.from_numpy(hist_vid),
                 torch.tensor(n, dtype=torch.long),
                 torch.from_numpy(_pad(lh, self.K)), torch.from_numpy(_pad(lv, self.K)),

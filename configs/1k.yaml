@@ -4,6 +4,8 @@ raw_dir: data/raw/KuaiRand-1K/data
 out_dir: data/processed/1k
 reports_dir: reports
 
+categories_file: data/raw/kuairand_video_categories.csv
+
 log_files:
   - log_standard_4_08_to_4_21_1k.csv
   - log_standard_4_22_to_5_08_1k.csv
@@ -23,6 +25,7 @@ hash:
 rank:
   model: sim          # din=短序列baseline, sim=+长序列GSU检索(消融用 --set rank.model=din)
   long_topk: 50       # GSU 从全生命周期检索的同类目行为数
+  gsu_key: tag1       # GSU 检索键:tag1=一级标签(66类) / cat2=二级类目(细粒度)
   use_sem: true       # caption 语义表(消融用 --set rank.use_sem=false)
   sem_dim: 64
   hist_len: 200
@@ -59,6 +62,14 @@ two_tower:
   temperature: 0.05
   batch_size: 2048
   epochs: 20          # 上限;实际由早停决定(val Recall@100 连续2轮不涨即停)
+  lr: 0.001
+  num_workers: 4
+
+# next-item 自回归预训练
+pretrain:
+  seq_len: 50
+  batch_size: 512
+  epochs: 2
   lr: 0.001
   num_workers: 4
 

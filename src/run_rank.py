@@ -51,12 +51,13 @@ def main(cfg):
         print(f"semantic table loaded: {tuple(sem.shape)} ({sem_np.nbytes / 1e6:.0f}MB)")
 
     # 历史点击流(严格 time < t 截取,含 val/test 期样本时刻前的点击,无泄漏)
+    gsu_key = rk.get("gsu_key", "tag1")
     inter = pd.read_parquet(cfg.out / "interactions.parquet",
-                            columns=["uid", "iid_h", "vid", "tag1", "time_ms", cfg.main_label])
+                            columns=["uid", "iid_h", "vid", "tag1", "cat2", "time_ms", cfg.main_label])
     clicks = inter[inter[cfg.main_label] == 1].drop(columns=[cfg.main_label])
     del inter
     history = UserHistory(clicks)
-    tag_history = TagHistory(clicks) if model_name == "sim" else None
+    tag_history = TagHistory(clicks, gsu_key) if model_name == "sim" else None
     del clicks
 
     def load_split(name, sample=0):
@@ -65,7 +66,7 @@ def main(cfg):
             df = df.sample(sample, random_state=cfg.seed)
         if model_name == "sim":
             return RankDatasetSIM(df, history, tag_history,
-                                  rk["hist_len"], rk["long_topk"], rk["label"])
+                                  rk["hist_len"], rk["long_topk"], rk["label"], gsu_key)
         return RankDataset(df, history, rk["hist_len"], rk["label"])
 
     ds_train = load_split("train")
@@ -75,6 +76,13 @@ def main(cfg):
     cls = {"din": DIN, "sim": SIM}[model_name]
     model = cls(meta["n_users"], meta["n_iid_h"], meta["n_author_h"], meta["n_tag"],
                 rk["emb_dim"], rk["mlp_dims"], sem=sem).to(device)
+    # 加载 next-item 预训练的 item embedding(可选)
+    init_emb = rk.get("init_item_emb", "")
+    if init_emb:
+        w = torch.load(cfg.out / init_emb, map_location="cpu")
+        assert w.shape == model.item_emb.weight.shape, f"{w.shape} != emb table"
+        model.item_emb.weight.data.copy_(w)
+        print(f"loaded pretrained item_emb from {init_emb} {tuple(w.shape)}")
     opt = torch.optim.Adam(model.parameters(), lr=rk["lr"])
     dl = DataLoader(ds_train, batch_size=rk["batch_size"], shuffle=True,
                     num_workers=rk["num_workers"], drop_last=True)

@@ -52,6 +52,7 @@ def attach_ids(df, item_map, user_map, item_side, n_cand, hash_cfg, video_map):
     df["author_h"] = (df["author_id"].fillna(-1).astype("int64") % A + 1).where(
         df["author_id"].notna(), 0).astype("int64")
     df["tag1"] = df["tag1"].fillna(0).clip(0, 67).astype("int64")
+    df["cat2"] = df["cat2"].fillna(0).astype("int64")
     return df.drop(columns=["author_id"])
 
 
@@ -81,6 +82,27 @@ def main(cfg):
     vf_all["tag1"] = pd.to_numeric(
         vf_all["tag"].astype(str).str.split(",").str[0], errors="coerce") + 1
     item_side = vf_all[["video_id", "author_id", "tag1"]]
+
+    # 二级类目(细粒度 GSU 检索键;未配置/缺失时优雅降级为 0)
+    cat_path = cfg.get("categories_file", "")
+    try:
+        if not cat_path:
+            raise FileNotFoundError
+        cats = []
+        for ch in pd.read_csv(cat_path, chunksize=1_000_000,
+                              usecols=["final_video_id", "second_level_category_id"]):
+            ch = ch[ch["final_video_id"].isin(set(logs["video_id"].unique()))]
+            cats.append(ch)
+        cats = pd.concat(cats).rename(columns={"final_video_id": "video_id"})
+        cats["cat2"] = cats["second_level_category_id"].fillna(-124)
+        cats.loc[cats["cat2"] < 0, "cat2"] = 0
+        cats["cat2"] = cats["cat2"].astype("int64")
+        item_side = item_side.merge(cats[["video_id", "cat2"]], on="video_id", how="left")
+        print(f"cat2 loaded: {len(cats):,} rows, {cats['cat2'].nunique()} distinct")
+    except FileNotFoundError:
+        print("!! categories 文件不存在,cat2 置 0(细粒度 GSU 不可用)")
+        item_side = item_side.copy()
+        item_side["cat2"] = 0
 
     logs = attach_ids(logs, item_map, user_map, item_side, n_cand, cfg.hash, video_map)
     logs = logs.sort_values(["uid", "time_ms"], kind="stable").reset_index(drop=True)

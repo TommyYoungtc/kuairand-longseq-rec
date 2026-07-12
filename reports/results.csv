@@ -385,3 +385,37 @@ date,exp_name,config,metric,value
 2026-07-11 16:38,mmoe-sem/1k/test,configs/1k.yaml (rank.exp_suffix=-sem),GAUC/long_view,0.615203
 2026-07-11 16:38,mmoe-sem/1k/test,configs/1k.yaml (rank.exp_suffix=-sem),AUC/is_like,0.917954
 2026-07-11 16:38,mmoe-sem/1k/test,configs/1k.yaml (rank.exp_suffix=-sem),GAUC/is_like,0.596140
+2026-07-11 17:25,unbiased/sim-sem/1k,configs/1k.yaml (rank.exp_suffix=-sem),AUC,0.687643
+2026-07-11 17:25,unbiased/sim-sem/1k,configs/1k.yaml (rank.exp_suffix=-sem),GAUC,0.586260
+2026-07-11 17:25,unbiased/sim-nosem/1k,configs/1k.yaml (rank.use_sem=false rank.exp_suffix=-nosem),AUC,0.676014
+2026-07-11 17:25,unbiased/sim-nosem/1k,configs/1k.yaml (rank.use_sem=false rank.exp_suffix=-nosem),GAUC,0.569120
+2026-07-11 17:50,sim-sem-h50/1k/val/ep0,configs/1k.yaml (rank.hist_len=50 rank.exp_suffix=-sem-h50),AUC,0.730502
+2026-07-11 17:50,sim-sem-h50/1k/val/ep0,configs/1k.yaml (rank.hist_len=50 rank.exp_suffix=-sem-h50),GAUC,0.593130
+2026-07-11 17:55,sim-sem-h50/1k/val/ep1,configs/1k.yaml (rank.hist_len=50 rank.exp_suffix=-sem-h50),AUC,0.702893
+2026-07-11 17:55,sim-sem-h50/1k/val/ep1,configs/1k.yaml (rank.hist_len=50 rank.exp_suffix=-sem-h50),GAUC,0.581087
+2026-07-11 17:56,sim-sem-h50/1k/test,configs/1k.yaml (rank.hist_len=50 rank.exp_suffix=-sem-h50),AUC,0.725778
+2026-07-11 17:56,sim-sem-h50/1k/test,configs/1k.yaml (rank.hist_len=50 rank.exp_suffix=-sem-h50),GAUC,0.585733
+2026-07-11 18:02,sim-sem-h100/1k/val/ep0,configs/1k.yaml (rank.hist_len=100 rank.exp_suffix=-sem-h100),AUC,0.732214
+2026-07-11 18:02,sim-sem-h100/1k/val/ep0,configs/1k.yaml (rank.hist_len=100 rank.exp_suffix=-sem-h100),GAUC,0.596222
+2026-07-11 18:08,sim-sem-h100/1k/val/ep1,configs/1k.yaml (rank.hist_len=100 rank.exp_suffix=-sem-h100),AUC,0.703812
+2026-07-11 18:08,sim-sem-h100/1k/val/ep1,configs/1k.yaml (rank.hist_len=100 rank.exp_suffix=-sem-h100),GAUC,0.583154
+2026-07-11 18:09,sim-sem-h100/1k/test,configs/1k.yaml (rank.hist_len=100 rank.exp_suffix=-sem-h100),AUC,0.727799
+2026-07-11 18:09,sim-sem-h100/1k/test,configs/1k.yaml (rank.hist_len=100 rank.exp_suffix=-sem-h100),GAUC,0.589369
+2026-07-11 18:20,sim-sem-h400/1k/val/ep0,configs/1k.yaml (rank.hist_len=400 rank.exp_suffix=-sem-h400),AUC,0.732176
+2026-07-11 18:20,sim-sem-h400/1k/val/ep0,configs/1k.yaml (rank.hist_len=400 rank.exp_suffix=-sem-h400),GAUC,0.597455
+2026-07-11 18:30,sim-sem-h400/1k/val/ep1,configs/1k.yaml (rank.hist_len=400 rank.exp_suffix=-sem-h400),AUC,0.697175
+2026-07-11 18:30,sim-sem-h400/1k/val/ep1,configs/1k.yaml (rank.hist_len=400 rank.exp_suffix=-sem-h400),GAUC,0.584872
+2026-07-11 18:31,sim-sem-h400/1k/test,configs/1k.yaml (rank.hist_len=400 rank.exp_suffix=-sem-h400),AUC,0.727318
+2026-07-11 18:31,sim-sem-h400/1k/test,configs/1k.yaml (rank.hist_len=400 rank.exp_suffix=-sem-h400),GAUC,0.594633
+2026-07-12 15:24,sim-sem-cat2/1k/val/ep0,configs/1k.yaml (rank.gsu_key=cat2 rank.exp_suffix=-sem-cat2),AUC,0.735012
+2026-07-12 15:24,sim-sem-cat2/1k/val/ep0,configs/1k.yaml (rank.gsu_key=cat2 rank.exp_suffix=-sem-cat2),GAUC,0.600122
+2026-07-12 15:32,sim-sem-cat2/1k/val/ep1,configs/1k.yaml (rank.gsu_key=cat2 rank.exp_suffix=-sem-cat2),AUC,0.697978
+2026-07-12 15:32,sim-sem-cat2/1k/val/ep1,configs/1k.yaml (rank.gsu_key=cat2 rank.exp_suffix=-sem-cat2),GAUC,0.587005
+2026-07-12 15:33,sim-sem-cat2/1k/test,configs/1k.yaml (rank.gsu_key=cat2 rank.exp_suffix=-sem-cat2),AUC,0.731561
+2026-07-12 15:33,sim-sem-cat2/1k/test,configs/1k.yaml (rank.gsu_key=cat2 rank.exp_suffix=-sem-cat2),GAUC,0.597566
+2026-07-12 15:44,sim-sem-pt/1k/val/ep0,configs/1k.yaml (rank.init_item_emb=pretrained_item_emb.pt rank.exp_suffix=-sem-pt),AUC,0.734056
+2026-07-12 15:44,sim-sem-pt/1k/val/ep0,configs/1k.yaml (rank.init_item_emb=pretrained_item_emb.pt rank.exp_suffix=-sem-pt),GAUC,0.597372
+2026-07-12 15:52,sim-sem-pt/1k/val/ep1,configs/1k.yaml (rank.init_item_emb=pretrained_item_emb.pt rank.exp_suffix=-sem-pt),AUC,0.697052
+2026-07-12 15:52,sim-sem-pt/1k/val/ep1,configs/1k.yaml (rank.init_item_emb=pretrained_item_emb.pt rank.exp_suffix=-sem-pt),GAUC,0.582066
+2026-07-12 15:53,sim-sem-pt/1k/test,configs/1k.yaml (rank.init_item_emb=pretrained_item_emb.pt rank.exp_suffix=-sem-pt),AUC,0.730119
+2026-07-12 15:53,sim-sem-pt/1k/test,configs/1k.yaml (rank.init_item_emb=pretrained_item_emb.pt rank.exp_suffix=-sem-pt),GAUC,0.594542

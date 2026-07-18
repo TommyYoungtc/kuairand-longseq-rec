@@ -23,9 +23,13 @@ hash:
 
 # 排序模型
 rank:
-  model: sim          # din=短序列baseline, sim=+长序列GSU检索(消融用 --set rank.model=din)
+  model: sim          # din / sim / simv4(v4 = pairwise损失 + token加料 + 用户画像)
   long_topk: 50       # GSU 从全生命周期检索的同类目行为数
   gsu_key: tag1       # GSU 检索键:tag1=一级标签(66类) / cat2=二级类目(细粒度)
+  # v4 专属
+  pairwise_weight: 0.5  # 用户内 BPR 辅助损失权重(0=关闭,仅 simv4 生效)
+  group_size: 8         # 用户分组采样:每组同用户样本数
+  use_user_feats: true  # 用户画像 one-hot 特征(仅 simv4)
   use_sem: true       # caption 语义表(消融用 --set rank.use_sem=false)
   sem_dim: 64
   hist_len: 200

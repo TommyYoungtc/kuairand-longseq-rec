@@ -14,10 +14,32 @@ from torch.utils.data import DataLoader
 from tqdm import tqdm
 
 from src.config import load_config
-from src.data.rank_dataset import RankDataset, RankDatasetSIM, TagHistory, UserHistory
+from src.data.rank_dataset import (RankDataset, RankDatasetSIM, RankDatasetV4,
+                                   TagHistory, UserGroupBatchSampler, UserHistory)
 from src.eval.metrics import auc, gauc, log_result
 from src.models.din import DIN
 from src.models.sim import SIM
+from src.models.sim_v4 import SIMv4, pairwise_bpr_loss
+
+
+def build_user_feats(cfg, n_users):
+    """用户画像:类别列 → one-hot 拼接矩阵(过滤高基数列),按 uid 对齐。"""
+    uf = pd.read_parquet(cfg.out / "user_features.parquet")
+    mats = []
+    for c in uf.columns:
+        if c in ("user_id", "uid"):
+            continue
+        codes, uniq = pd.factorize(uf[c])
+        if len(uniq) > 60:          # 跳过高基数加密特征
+            continue
+        oh = np.zeros((len(uf), len(uniq) + 1), dtype=np.float32)
+        oh[np.arange(len(uf)), codes + 1] = 1.0   # 缺失(-1)落到第 0 列
+        mats.append(oh)
+    M = np.concatenate(mats, axis=1)
+    out = np.zeros((n_users, M.shape[1]), dtype=np.float32)
+    out[uf["uid"].to_numpy()] = M
+    print(f"user profile feats: {out.shape[1]} dims from {len(mats)} columns")
+    return torch.from_numpy(out)
 
 
 @torch.no_grad()
@@ -52,18 +74,23 @@ def main(cfg):
 
     # 历史点击流(严格 time < t 截取,含 val/test 期样本时刻前的点击,无泄漏)
     gsu_key = rk.get("gsu_key", "tag1")
-    inter = pd.read_parquet(cfg.out / "interactions.parquet",
-                            columns=["uid", "iid_h", "vid", "tag1", "cat2", "time_ms", cfg.main_label])
+    cols = ["uid", "iid_h", "vid", "tag1", "cat2", "time_ms", cfg.main_label]
+    if model_name == "simv4":
+        cols.append("author_h")     # v4 序列 token 需要作者
+    inter = pd.read_parquet(cfg.out / "interactions.parquet", columns=cols)
     clicks = inter[inter[cfg.main_label] == 1].drop(columns=[cfg.main_label])
     del inter
     history = UserHistory(clicks)
-    tag_history = TagHistory(clicks, gsu_key) if model_name == "sim" else None
+    tag_history = TagHistory(clicks, gsu_key) if model_name in ("sim", "simv4") else None
     del clicks
 
     def load_split(name, sample=0):
         df = pd.read_parquet(cfg.out / f"rank_{name}.parquet")
         if sample and len(df) > sample:
             df = df.sample(sample, random_state=cfg.seed)
+        if model_name == "simv4":
+            return RankDatasetV4(df, history, tag_history,
+                                 rk["hist_len"], rk["long_topk"], rk["label"], gsu_key)
         if model_name == "sim":
             return RankDatasetSIM(df, history, tag_history,
                                   rk["hist_len"], rk["long_topk"], rk["label"], gsu_key)
@@ -73,9 +100,15 @@ def main(cfg):
     ds_val = load_split("val", rk["val_sample"])
     print(f"model={model_name}  device={device}  train={len(ds_train):,}  val={len(ds_val):,}")
 
-    cls = {"din": DIN, "sim": SIM}[model_name]
-    model = cls(meta["n_users"], meta["n_iid_h"], meta["n_author_h"], meta["n_tag"],
-                rk["emb_dim"], rk["mlp_dims"], sem=sem).to(device)
+    if model_name == "simv4":
+        user_feats = build_user_feats(cfg, meta["n_users"]) if rk.get("use_user_feats", True) else None
+        model = SIMv4(meta["n_users"], meta["n_iid_h"], meta["n_author_h"], meta["n_tag"],
+                      rk["emb_dim"], rk["mlp_dims"], sem=sem,
+                      user_feats=user_feats.to(device) if user_feats is not None else None).to(device)
+    else:
+        cls = {"din": DIN, "sim": SIM}[model_name]
+        model = cls(meta["n_users"], meta["n_iid_h"], meta["n_author_h"], meta["n_tag"],
+                    rk["emb_dim"], rk["mlp_dims"], sem=sem).to(device)
     # 加载 next-item 预训练的 item embedding(可选)
     init_emb = rk.get("init_item_emb", "")
     if init_emb:
@@ -84,8 +117,18 @@ def main(cfg):
         model.item_emb.weight.data.copy_(w)
         print(f"loaded pretrained item_emb from {init_emb} {tuple(w.shape)}")
     opt = torch.optim.Adam(model.parameters(), lr=rk["lr"])
-    dl = DataLoader(ds_train, batch_size=rk["batch_size"], shuffle=True,
-                    num_workers=rk["num_workers"], drop_last=True)
+
+    # v4:用户分组 batch(组内同用户)以支持 pairwise 损失;其余模型常规随机 batch
+    pw_weight = rk.get("pairwise_weight", 0.5) if model_name == "simv4" else 0.0
+    G = rk.get("group_size", 8)
+    if pw_weight > 0:
+        sampler = UserGroupBatchSampler(ds_train.uid, G,
+                                        rk["batch_size"] // G, cfg.seed)
+        dl = DataLoader(ds_train, batch_sampler=sampler, num_workers=rk["num_workers"])
+        print(f"user-grouped batches: {len(sampler)}/epoch  (G={G}, pairwise_w={pw_weight})")
+    else:
+        dl = DataLoader(ds_train, batch_size=rk["batch_size"], shuffle=True,
+                        num_workers=rk["num_workers"], drop_last=True)
 
     best_gauc, best_state, patience = -1.0, None, 0
     for ep in range(rk["epochs"]):
@@ -93,8 +136,12 @@ def main(cfg):
         losses = []
         for batch in tqdm(dl, desc=f"epoch {ep}"):
             *x, y = batch
+            y = y.to(device)
             logit = model(*(t.to(device) for t in x))
-            loss = F.binary_cross_entropy_with_logits(logit, y.to(device))
+            loss = F.binary_cross_entropy_with_logits(logit, y)
+            if pw_weight > 0:
+                pw, _ = pairwise_bpr_loss(logit, y, G)
+                loss = loss + pw_weight * pw
             opt.zero_grad()
             loss.backward()
             opt.step()

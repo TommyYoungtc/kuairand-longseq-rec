@@ -419,3 +419,21 @@ date,exp_name,config,metric,value
 2026-07-12 15:52,sim-sem-pt/1k/val/ep1,configs/1k.yaml (rank.init_item_emb=pretrained_item_emb.pt rank.exp_suffix=-sem-pt),GAUC,0.582066
 2026-07-12 15:53,sim-sem-pt/1k/test,configs/1k.yaml (rank.init_item_emb=pretrained_item_emb.pt rank.exp_suffix=-sem-pt),AUC,0.730119
 2026-07-12 15:53,sim-sem-pt/1k/test,configs/1k.yaml (rank.init_item_emb=pretrained_item_emb.pt rank.exp_suffix=-sem-pt),GAUC,0.594542
+2026-07-17 18:55,simv4-v4/1k/val/ep0,configs/1k.yaml (rank.model=simv4 rank.gsu_key=cat2 rank.exp_suffix=-v4),AUC,0.739662
+2026-07-17 18:55,simv4-v4/1k/val/ep0,configs/1k.yaml (rank.model=simv4 rank.gsu_key=cat2 rank.exp_suffix=-v4),GAUC,0.609121
+2026-07-17 19:06,simv4-v4/1k/val/ep1,configs/1k.yaml (rank.model=simv4 rank.gsu_key=cat2 rank.exp_suffix=-v4),AUC,0.714987
+2026-07-17 19:06,simv4-v4/1k/val/ep1,configs/1k.yaml (rank.model=simv4 rank.gsu_key=cat2 rank.exp_suffix=-v4),GAUC,0.587844
+2026-07-17 19:07,simv4-v4/1k/test,configs/1k.yaml (rank.model=simv4 rank.gsu_key=cat2 rank.exp_suffix=-v4),AUC,0.735555
+2026-07-17 19:07,simv4-v4/1k/test,configs/1k.yaml (rank.model=simv4 rank.gsu_key=cat2 rank.exp_suffix=-v4),GAUC,0.605424
+2026-07-18 07:41,simv4-v4-nopw/1k/val/ep0,configs/1k.yaml (rank.model=simv4 rank.gsu_key=cat2 rank.pairwise_weight=0 rank.exp_suffix=-v4-nopw),AUC,0.735422
+2026-07-18 07:41,simv4-v4-nopw/1k/val/ep0,configs/1k.yaml (rank.model=simv4 rank.gsu_key=cat2 rank.pairwise_weight=0 rank.exp_suffix=-v4-nopw),GAUC,0.603278
+2026-07-18 07:50,simv4-v4-nopw/1k/val/ep1,configs/1k.yaml (rank.model=simv4 rank.gsu_key=cat2 rank.pairwise_weight=0 rank.exp_suffix=-v4-nopw),AUC,0.708360
+2026-07-18 07:50,simv4-v4-nopw/1k/val/ep1,configs/1k.yaml (rank.model=simv4 rank.gsu_key=cat2 rank.pairwise_weight=0 rank.exp_suffix=-v4-nopw),GAUC,0.588145
+2026-07-18 07:52,simv4-v4-nopw/1k/test,configs/1k.yaml (rank.model=simv4 rank.gsu_key=cat2 rank.pairwise_weight=0 rank.exp_suffix=-v4-nopw),AUC,0.728292
+2026-07-18 07:52,simv4-v4-nopw/1k/test,configs/1k.yaml (rank.model=simv4 rank.gsu_key=cat2 rank.pairwise_weight=0 rank.exp_suffix=-v4-nopw),GAUC,0.597949
+2026-07-18 08:02,simv4-v4-nouf/1k/val/ep0,configs/1k.yaml (rank.model=simv4 rank.gsu_key=cat2 rank.use_user_feats=false rank.exp_suffix=-v4-nouf),AUC,0.739915
+2026-07-18 08:02,simv4-v4-nouf/1k/val/ep0,configs/1k.yaml (rank.model=simv4 rank.gsu_key=cat2 rank.use_user_feats=false rank.exp_suffix=-v4-nouf),GAUC,0.609230
+2026-07-18 08:12,simv4-v4-nouf/1k/val/ep1,configs/1k.yaml (rank.model=simv4 rank.gsu_key=cat2 rank.use_user_feats=false rank.exp_suffix=-v4-nouf),AUC,0.713811
+2026-07-18 08:12,simv4-v4-nouf/1k/val/ep1,configs/1k.yaml (rank.model=simv4 rank.gsu_key=cat2 rank.use_user_feats=false rank.exp_suffix=-v4-nouf),GAUC,0.588894
+2026-07-18 08:14,simv4-v4-nouf/1k/test,configs/1k.yaml (rank.model=simv4 rank.gsu_key=cat2 rank.use_user_feats=false rank.exp_suffix=-v4-nouf),AUC,0.735950
+2026-07-18 08:14,simv4-v4-nouf/1k/test,configs/1k.yaml (rank.model=simv4 rank.gsu_key=cat2 rank.use_user_feats=false rank.exp_suffix=-v4-nouf),GAUC,0.605409
